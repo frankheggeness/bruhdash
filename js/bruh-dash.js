@@ -120,7 +120,17 @@ return output;
   },
 
   // creates a slice of an array with n elements taken from the end
-  takeRight: function () {
+  takeRight: function (arr, n) {
+    if(n === undefined){
+      var last = [arr[arr.length-1]]
+      return last
+    } else if(n === 0){
+      var emp = [];
+      return emp;
+    } else{
+      arr = arr.slice(arr.length-n, arr.length);
+      return arr;
+    }
 
   },
 
