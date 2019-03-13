@@ -88,7 +88,16 @@ return output;
   },
 
   // returns a slice of array with n elements dropped from the end
-  dropRight: function() {
+  dropRight: function(arr, n) {
+    if(n=== undefined){
+      arr.splice(arr.length-1,1)
+      return arr;
+    } else if(n==0){
+      return arr;
+    } else{
+      arr.splice(arr.length-(n), n)
+      return arr;
+    }
 
   },
 
