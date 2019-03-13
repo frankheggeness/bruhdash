@@ -102,7 +102,20 @@ return output;
   },
 
   // creates a slice of an array with n elements taken from the beginning
-  take: function () {
+  take: function (arr, n) {
+    if (n === undefined){
+      arr = arr.slice(0,1);
+      return arr
+    }else if(n ===0){
+      var emp = [];
+      return emp;
+    } else if(n>arr.length){
+      return arr;
+    } else{
+      arr = arr.slice(0,n);
+      console.log(arr)
+      return arr;
+    }
 
   },
 
