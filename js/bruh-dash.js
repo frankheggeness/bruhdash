@@ -65,13 +65,25 @@ return output;
   },
 
   // creates a slice of an array from the start index up to but not including the end index
-  slice: function (arr) {
-    arr.splice(arr.length, 1);
+  slice: function (arr, start, end) {
+    arr = arr.slice(start, end);
     return arr
   },
 
   // returns a slice of array with n elements dropped from the beignning
-  drop: function(){
+  drop: function(arr, n){
+    // arr.splice(0,n)
+    // return arr;
+    if(n===0){
+     
+      return arr;
+    }else if(n === undefined){
+      arr.splice(0,1)
+      return arr
+    } else{
+      arr.splice(0,n)
+      return arr;
+    }
 
   },
 
