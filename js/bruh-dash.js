@@ -22,31 +22,52 @@ global.bruhdash = {
 
   // returns the index of the first matching element from left to right
   indexOf: function (arr, element) {
-    for(i=0;i<arr.length;i++){
-      if(arr[i]=element){
-        return i
+   
+    var output = -1
+for(i=0;i<arr.length;i++){
+      if(arr[i]=== element){
+        output =  i;
       }
+      
+}
+  return output
     }
-  },
+  ,
+
+  
 
   // returns the index of the first matching element from right to left
-  lastIndexOf: function () {
-
+  lastIndexOf: function (arr,element) {
+    var output = -1
+   for(i=arr.length;i>=0;i--){
+    if(arr[i]=== element){
+      output =  i;
+    }
+   }
+return output;
   },
 
   // returns an array with all elements except for the last element
-  initial: function () {
-
+  initial: function (arr) {
+    arr.pop();
+    return arr
   },
   
   // returns an array with all falsey values removed
-  compact: function() {
-
+  compact: function(arr) {
+    for(i=0;i<arr.length;i++){
+      if(arr[i]===false|| arr[i]=== 0|| arr[i]=== null || isNaN(arr[i])||arr[i]===NaN|| arr[i]=== ''){
+        arr.splice(i,1)
+        i--
+      }
+    }
+    return arr
   },
 
   // creates a slice of an array from the start index up to but not including the end index
-  slice: function () {
-
+  slice: function (arr) {
+    arr.splice(arr.length, 1);
+    return arr
   },
 
   // returns a slice of array with n elements dropped from the beignning
