@@ -131,33 +131,70 @@ return output;
       arr = arr.slice(arr.length-n, arr.length);
       return arr;
     }
-
   },
 
   // fills elements of array with specified value from the start index
   // up to but not including the end index
-  fill: function() {
-
+  fill: function(arr, value, start, end ) {
+    if (start === undefined && end === undefined){
+      for(i=0;i<arr.length;i++){
+        arr.splice(i,1,value)
+        
+      }
+      return arr;
+    }else{
+      for(i=start;i<end;i++){
+        arr.splice(i,1,value)
+      }
+      return arr;
+    }
+    
   },
 
   // removes all given values from an array
-  pull: function () {
-
+  pull: function (arr, value1, value2) {
+    for(i=0;i<arr.length;i++){
+      if(arr[i]=== value1 || arr[i] === value2){
+        arr.splice(i,1)
+        i--
+      }
+    }
+    return arr
+  
   },
 
   // removes elements of an array corresponding to the given indices
-  pullAt: function () {
-
+  pullAt: function (arr, index) {
+    var newArr = [];
+    for(i=0;i<index.length;i++){
+      newArr.push(arr[index[i]])
+    }
+    return newArr;
   },
 
   // creates an array excluding all the specified values
-  without: function() {
+  without: function(arr,value1, value2) {
+    var newArr = [];
+    for(i=0;i<arr.length;i++){
+      if(arr[i] !== value1 && arr[i] !== value2){
+        newArr.push(arr[i])
+      }
+    }
+    return newArr;
 
   },
 
   // returns an array with specified values excluded
-  difference: function() {
-
+  difference: function(arr, values) {
+    y = 0
+    for(i=0;i<arr.length;i++){
+      if(arr[i]=== values[y]){
+        arr.splice(i,1)
+        i--
+        y++
+      }
+    }
+return arr;
   },
 
   /*******************
@@ -165,8 +202,13 @@ return output;
    *******************/ 
 
   // creates an array of grouped elements
-  zip: function () {
-
+  zip: function (array1, array2, array3) {
+    newZip0 = [];
+    newZip1 = [];
+    newZip2 = [];
+    for(i=0;i<2;i++){
+    
+  }
   },
 
   // creates an array of grouped elements in their pre-zip configuration
